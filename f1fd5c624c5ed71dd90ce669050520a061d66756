@@ -1,0 +1,14 @@
+- spec adapterized,
+- added applnk patch: install desktop file in applnk tree and in Multimedia
+  subdirectory (IMHO it is much beter place for mp3 tools),
+- added pixmaps_path patch wich change install path for yamt pixmapx to
+  %%{_datadir}/pixmaps instead %%{_datadir}/pixmaps/yamt (this is only one png
+  file),
+- removed bashizm from %build (use "VAR=<valuve>; export VAR" instead
+  "export VAR=<valuve>"),
+- added using %%configure macro in %build and DESTDIR style install,
+- removed stripping in %install (pass LDFLAGS="-s" to ./configure env
+  poroduces on linking stripped binaries),
+- fix installing .mo files by add "gettextixe --copy --force in %build
+  (added gettext-devel to BuildRequires),
+- removed COPYING from %doc (clear license stantment is in License field).
