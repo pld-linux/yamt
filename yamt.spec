@@ -5,8 +5,6 @@ Version:	0.5
 Release:	4
 License:	GPL
 Group:		X11/Applications
-Group(de):	X11/Applikationen
-Group(pl):	X11/Aplikacje
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/yamt/%{name}-%{version}.tar.gz
 Patch0:		%{name}-pixmaps.patch
 Patch1:		%{name}-ac_fix.patch
