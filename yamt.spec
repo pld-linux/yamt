@@ -19,11 +19,11 @@ BuildRequires:	gnome-libs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-YAMT is Yet Another Mp3 Tool which helps you to organize your mp3s.
+YAMT is Yet Another Mp3 Tool which helps you to organize your MP3s.
 
 %description -l pl
 YAMT jest Jeszcze Jednym Narzêdziem Mp3, które pomo¿e porz±dkowaæ
-twoje pliki mp3.
+twoje pliki MP3.
 
 %prep
 %setup -q
