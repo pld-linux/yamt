@@ -4,9 +4,9 @@ Name:		yamt
 Version:	0.5
 Release:	2
 License:	GPL
-Group:		X11/Aplications
+Group:		X11/Applications
 Group(pl):	X11/Aplikacje
-Source:		http://sourceforge.net/download.php/yamt/%{name}-%{version}.tar.gz
+Source0:	http://sourceforge.net/download.php/yamt/%{name}-%{version}.tar.gz
 Patch0:		yamt-pixmaps.patch
 URL:		http://yamt.sourceforge.net/
 BuildRequires:	gnome-libs-devel
@@ -21,8 +21,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 YAMT is Yet Another Mp3 Tool which helps you to organize your mp3s.
 
 %description -l pl
-YAMT jest Jeszcze Jednym Narzêdziem Mp3, które pomo¿e porz±dkowaæ twoje
-pliki mp3.
+YAMT jest Jeszcze Jednym Narzêdziem Mp3, które pomo¿e porz±dkowaæ
+twoje pliki mp3.
 
 %prep
 %setup -q
