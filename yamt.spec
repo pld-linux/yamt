@@ -6,6 +6,7 @@ Release:	5
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/yamt/%{name}-%{version}.tar.gz
+# Source0-md5:	22beb30f6762ede1641e89c978636dcd
 Patch0:		%{name}-pixmaps.patch
 Patch1:		%{name}-ac_fix.patch
 Patch2:		%{name}-va_arg_fix.patch
