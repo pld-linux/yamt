@@ -2,18 +2,20 @@ Summary:	Yet Another Mp3 Tool
 Summary(pl):	Jeszcze Jedno Narzêdzie Mp3
 Name:		yamt
 Version:	0.5
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/yamt/%{name}-%{version}.tar.gz
 Patch0:		%{name}-pixmaps.patch
+Patch1:		%{name}-ac_fix.patch
 URL:		http://yamt.sourceforge.net/
+BuildRequires:	automake
+BuildRequires:	autoconf
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	ORBit-devel
-BuildRequires:	gettext-devel
-BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -28,10 +30,14 @@ twoje pliki mp3.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
-automake
+rm -f missing
 gettextize --copy --force
+aclocal -I macros
+autoconf
+automake -a -c
 %configure \
 	--enable-gnome
 %{__make}
@@ -56,4 +62,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/yamt
 %{_applnkdir}/Multimedia/yamt.desktop
 %{_pixmapsdir}/*
-%{_datadir}/gnome/help/yamt
+%dir %{_datadir}/gnome/help/yamt
+%{_datadir}/gnome/help/yamt/*
