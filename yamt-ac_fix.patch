@@ -1,0 +1,25 @@
+--- ./macros/Makefile.am.org	Wed Mar 29 16:51:10 2000
++++ ./macros/Makefile.am	Sat Dec 22 21:55:03 2001
+@@ -29,7 +29,6 @@
+ @MAINT@macros.dep: Makefile.am
+ @MAINT@	@echo '$$(top_srcdir)/aclocal.m4: $(MACROS:%=macros/%)' > $@
+ 
+-if INSIDE_GNOME_COMMON
+ gnome_aclocaldir = $(datadir)/aclocal/gnome
+ 
+ gnome-macros.dep: Makefile.am
+@@ -37,4 +36,3 @@
+ 
+ gnome_aclocal_DATA = $(MACROS) gnome-macros.dep gnome-common.m4 autogen.sh
+ 
+-endif
+--- ./configure.in.org	Wed Mar 29 16:51:09 2000
++++ ./configure.in	Sat Dec 22 21:33:46 2001
+@@ -5,7 +5,6 @@
+ AM_CONFIG_HEADER(config.h)
+ 
+ dnl Pick up the Gnome macros.
+-AM_ACLOCAL_INCLUDE(macros)
+ 
+ GNOME_INIT
+ AC_ISC_POSIX
