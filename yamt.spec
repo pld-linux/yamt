@@ -35,7 +35,7 @@ twoje pliki mp3.
 %build
 rm -f missing
 %{__gettextize}
-aclocal -I macros
+%{__aclocal} -I macros
 %{__autoconf}
 %{__automake}
 %configure \
