@@ -2,7 +2,7 @@ Summary:	Yet Another Mp3 Tool
 Summary(pl):	Jeszcze Jedno Narzêdzie Mp3
 Name:		yamt
 Version:	0.5
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/yamt/%{name}-%{version}.tar.gz
@@ -49,8 +49,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	Applicationsdir=%{_applnkdir}/Multimedia
 
-gzip -9nf AUTHORS NEWS README TODO
-
 %find_lang %{name} --with-gnome
 
 %clean
@@ -58,7 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS NEWS README TODO
 %attr(755,root,root) %{_bindir}/yamt
 %{_applnkdir}/Multimedia/yamt.desktop
 %{_pixmapsdir}/*
