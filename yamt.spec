@@ -14,10 +14,9 @@ BuildRequires:	gnome-libs-devel
 BuildRequires:	ORBit-devel
 BuildRequires:	gettext-devel
 BuildRequires:	automake
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
-%define		_applnkdir	%{_datadir}/applnk
 
 %description
 YAMT is Yet Another Mp3 Tool which helps you to organize your mp3s.
