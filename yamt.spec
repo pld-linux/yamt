@@ -9,11 +9,11 @@ Source0:	ftp://download.sourceforge.net/pub/sourceforge/yamt/%{name}-%{version}.
 Patch0:		%{name}-pixmaps.patch
 Patch1:		%{name}-ac_fix.patch
 URL:		http://yamt.sourceforge.net/
+BuildRequires:	ORBit-devel
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
-BuildRequires:	ORBit-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -49,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 
 gzip -9nf AUTHORS NEWS README TODO
 
-%find_lang %{name}
+%find_lang %{name} --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -60,5 +60,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/yamt
 %{_applnkdir}/Multimedia/yamt.desktop
 %{_pixmapsdir}/*
-%dir %{_datadir}/gnome/help/yamt
-%{_datadir}/gnome/help/yamt/*
