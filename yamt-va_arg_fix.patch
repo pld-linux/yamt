@@ -1,0 +1,11 @@
+--- src/common.c~	Sun Jun  9 11:32:43 2002
++++ src/common.c	Sun Jun  9 11:33:18 2002
+@@ -49,7 +49,7 @@
+ 	  break;
+ 	  
+ 	case 'c':
+-	  c = va_arg( ap, char );
++	  c = (char) va_arg( ap, int );
+ 	  if( BUFFERSIZE*2-strlen(message) < 2 )
+ 	    {
+ 	      if( BUFFERSIZE*2-strlen(message) > strlen(error) )
