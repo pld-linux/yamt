@@ -6,7 +6,7 @@ Release:	2
 License:	GPL
 Group:		X11/Applications
 Group(pl):	X11/Aplikacje
-Source0:	http://sourceforge.net/download.php/yamt/%{name}-%{version}.tar.gz
+Source0:	ftp://download.sourceforge.net/pub/sourceforge/yamt/%{name}-%{version}.tar.gz
 Patch0:		yamt-pixmaps.patch
 URL:		http://yamt.sourceforge.net/
 BuildRequires:	gnome-libs-devel
