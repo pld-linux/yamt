@@ -5,7 +5,7 @@ Version:	0.5
 Release:	5
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://download.sourceforge.net/pub/sourceforge/yamt/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/yamt/%{name}-%{version}.tar.gz
 Patch0:		%{name}-pixmaps.patch
 Patch1:		%{name}-ac_fix.patch
 Patch2:		%{name}-va_arg_fix.patch
@@ -16,7 +16,6 @@ BuildRequires:	autoconf
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 YAMT is Yet Another Mp3 Tool which helps you to organize your mp3s.
