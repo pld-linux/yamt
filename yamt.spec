@@ -34,8 +34,8 @@ twoje pliki mp3.
 rm -f missing
 gettextize --copy --force
 aclocal -I macros
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-gnome
 %{__make}
