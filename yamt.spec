@@ -55,5 +55,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root) %{_bindir}/yamt
 %{_applnkdir}/Multimedia/yamt.desktop
-%{_datadir}/pixmaps/*
+%{_pixmapsdir}/*
 %{_datadir}/gnome/help/yamt
