@@ -8,6 +8,7 @@ Group:		X11/Applications
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/yamt/%{name}-%{version}.tar.gz
 Patch0:		%{name}-pixmaps.patch
 Patch1:		%{name}-ac_fix.patch
+Patch2:		%{name}-va_arg_fix.patch
 URL:		http://yamt.sourceforge.net/
 BuildRequires:	ORBit-devel
 BuildRequires:	automake
@@ -29,6 +30,7 @@ twoje pliki mp3.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2
 
 %build
 rm -f missing
