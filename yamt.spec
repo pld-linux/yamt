@@ -1,5 +1,5 @@
-Summary:	Yet Another Mp3 Tool
-Summary(pl):	Jeszcze Jedno Narzêdzie Mp3
+Summary:	Yet Another MP3 Tool
+Summary(pl):	Jeszcze Jedno Narzêdzie MP3
 Name:		yamt
 Version:	0.5
 Release:	5
@@ -19,10 +19,10 @@ BuildRequires:	gnome-libs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-YAMT is Yet Another Mp3 Tool which helps you to organize your MP3s.
+YAMT is Yet Another MP3 Tool which helps you to organize your MP3s.
 
 %description -l pl
-YAMT jest Jeszcze Jednym Narzêdziem Mp3, które pomo¿e porz±dkowaæ
+YAMT jest Jeszcze Jednym Narzêdziem MP3, które pomo¿e porz±dkowaæ
 twoje pliki MP3.
 
 %prep
