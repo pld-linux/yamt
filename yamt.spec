@@ -3,19 +3,21 @@ Summary(pl):	Jeszcze Jedno Narzêdzie Mp3
 Name:		yamt
 Version:	0.4
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		X11/Aplications
 Group(pl):	X11/Aplikacje
-Source:		%{name}-%{version}.tar.gz
-Patch0:		yamt-Makefile.patch
+Source:		http://sourceforge.net/download.php/yamt/%{name}-%{version}.tar.gz
+Patch0:		yamt-applnk.patch
+Patch1:		yamt-pixmaps_path.patch
 URL:		http://yamt.sourceforge.net/
+BuildRequires:	gnome-libs-devel
+BuildRequires:	ORBit-devel
+BuildRequires:	gettext-devel
+BuildRequires:	automake
 BuildRoot:	/tmp/%{name}-%{version}-root
-Requires:	gnome-libs
-Requires:	ORBit
-BuildPrereq:	gnome-libs-devel
-BuildPrereq:	ORBit-devel
 
 %define		_prefix		/usr/X11R6
+%define		_applnkdir	%{_datadir}/applnk
 
 %description
 YAMT is Yet Another Mp3 Tool which helps you to organize your mp3s.
@@ -27,35 +29,32 @@ pliki mp3.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
-export CXXFLAGS="$RPM_OPT_FLAGS"
-export CFLAGS="$RPM_OPT_FLAGS"
-export LDFLAGS="-s"
-./configure \
-    --prefix=$RPM_BUILD_ROOT%{_prefix} \
-    --enable-gnome
+automake
+gettextize --copy --force
+LDFLAGS="-s"; export LDFLAGS
+%configure \
+	--enable-gnome
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
 
-make install
+make DESTDIR=$RPM_BUILD_ROOT install
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_bindir}/yamt || :
+gzip -9nf AUTHORS NEWS README TODO
 
-gzip -9nf AUTHORS COPYING NEWS README TODO
-
-%find_lang yamt
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f yamt.lang
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc {AUTHORS,COPYING,NEWS,README,TODO}.gz
+%doc *.gz
 %attr(755,root,root) %{_bindir}/yamt
-%{_datadir}/applnk/Applications/yamt.desktop
-%{_datadir}/pixmaps/yamt/yamt-logo.png
+%{_applnkdir}/Multimedia/yamt.desktop
+%{_datadir}/pixmaps/*
 %{_datadir}/gnome/help/yamt
