@@ -1,14 +1,14 @@
 Summary:	Yet Another Mp3 Tool
 Summary(pl):	Jeszcze Jedno Narzêdzie Mp3
 Name:		yamt
-Version:	0.4
+Version:	0.5
 Release:	1
 License:	GPL
 Group:		X11/Aplications
 Group(pl):	X11/Aplikacje
 Source:		http://sourceforge.net/download.php/yamt/%{name}-%{version}.tar.gz
 Patch0:		yamt-applnk.patch
-Patch1:		yamt-pixmaps_path.patch
+Patch1:		yamt-pixmaps.patch
 URL:		http://yamt.sourceforge.net/
 BuildRequires:	gnome-libs-devel
 BuildRequires:	ORBit-devel
