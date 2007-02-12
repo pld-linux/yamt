@@ -1,5 +1,5 @@
 Summary:	Yet Another MP3 Tool
-Summary(pl.UTF-8):   Jeszcze Jedno Narzędzie MP3
+Summary(pl.UTF-8):	Jeszcze Jedno Narzędzie MP3
 Name:		yamt
 Version:	0.5
 Release:	5
