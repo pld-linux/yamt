@@ -14,7 +14,7 @@ URL:		http://yamt.sourceforge.net/
 BuildRequires:	ORBit-devel
 BuildRequires:	automake
 BuildRequires:	autoconf
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-libs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
