@@ -27,9 +27,9 @@ twoje pliki MP3.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2
+%patch -P0 -p1
+%patch -P1 -p1
+%patch -P2
 
 %build
 rm -f missing
